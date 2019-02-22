@@ -8,3 +8,4 @@ a reveal js presentation about it attacks
 - examples: brute force (4 digit/5 digit nr)
 - damals/heute
 - targeted / untargeted (random spread)
+- odometer live attack count from "https://cybermap.kaspersky.com/stats" - IDS
