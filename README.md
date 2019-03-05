@@ -15,6 +15,11 @@ a reveal js presentation about it attacks
 - Brute Force
 - DDos
 - Social engineering
+  - fishing 
+  - simulierte fishing tests
 - man in the middle
-- botnet
+  - ausgeben als router
+  - schwachstelle im router
+  - man in the browser
+- botnetze
 - pysische zugriffe
