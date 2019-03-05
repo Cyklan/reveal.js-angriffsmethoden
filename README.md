@@ -22,4 +22,13 @@ a reveal js presentation about it attacks
   - schwachstelle im router
   - man in the browser
 - botnetze
+  - Verwendungszwecke
+    - Proxy
+    - DDoS-Attacken / DRDoS-Attacken
+    - Klickbetrug
+  - Verwendungszweck intern
+    - Zugrif auf Loakle Daten (Sniffer, Password Grabber)
+    - Ransomware
+    - Filesharing
+    - Nutzung Rechenleistung (Bitcoin-mining)
 - pysische zugriffe
