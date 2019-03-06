@@ -32,3 +32,17 @@ a reveal js presentation about it attacks
     - Filesharing
     - Nutzung Rechenleistung (Bitcoin-mining)
 - pysische zugriffe
+  - Keylogger
+  - Bad USB (USB Killer oder programme)
+  - GSM Wanzen
+  - Störsender
+  - Lan Turtle
+  - 
+
+- digitale Forensik
+  - alte entsorgte Festplatten
+
+- Faktor Mensch
+  - Aufschreiben von passwörtern
+  - nicht abschließen
+  - offensichtlichehinweise (abrieb/fingerabdrücke an zahlen schloss)
