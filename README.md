@@ -9,7 +9,7 @@ a reveal js presentation about it attacks
 - damals/heute
 - targeted / untargeted (random spread)
 - odometer live attack count from "https://cybermap.kaspersky.com/stats" - IDS
-
+- Design 80er jahre retro low poly
 
 ## Themen
 - Brute Force
