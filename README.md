@@ -12,7 +12,7 @@ a reveal js presentation about it attacks
 - Design 80er jahre retro low poly
 
 ## Themen
-- Brute Force (Nils)
+- Brute Force (Nils) ✅
 - Social engineering (Jonathan)
   - fishing 
   - simulierte fishing tests
