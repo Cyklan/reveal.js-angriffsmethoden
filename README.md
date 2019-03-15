@@ -13,7 +13,6 @@ a reveal js presentation about it attacks
 
 ## Themen
 - Brute Force (Nils)
-- DDos (Nils)
 - Social engineering (Jonathan)
   - fishing 
   - simulierte fishing tests
