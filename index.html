@@ -10,7 +10,8 @@
 		<link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
 		<link rel="stylesheet" href="files/css/main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-		<script src="files/js/brute.js"></script>
+		<script src="files/js/moment.js"></script>
+		<script src="files/js/pwcalc.js"></script>
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="vendor/revealjs/lib/css/zenburn.css">
 
@@ -19,19 +20,51 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'vendor/revealjs/css/print/pdf.css' : 'vendor/revealjs/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+			// pw calc input
+
+			$(document).ready(() => {
+				$("#password-calc").on('keyup', function (e) {
+					if (e.keyCode == 13) {
+						calcPW()
+					}
+				})
+			})
+
 		</script>
 	</head>
 	<body>
-		<div class="passwd-popup" onclick="hide()">TEST</div>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1<br>
-					<button onclick="call()"> Knopf</button>
+				<section>
+					<h2>Angriffsmethoden</h2> <br>
+					von <a href="#">Jonathan</a> & <a href="#">Nils</a>
 				</section>
 				<section>
-                    
+					<section>
+						<h2>Brute Force Angriff</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Brute Force (eng. rohe Gewalt)</li>
+							<li>Millionen Passwörter werden durchprobiert</li>
+						</ul>
+					</section>
+					<section>
+						<input type="password" name="password" id="password-calc"> <br>
+						<button onclick="calcPW()">Berechnen</button> <br>
+						<span id="pw-length"></span>
+					</section>
+					<section>
+						<p>D0g.....................</p>
+						oder <br>
+						<p>PrXyc.N(n4k77#L!eVdAfp9</p>
+					</section>
+					<section>
+						<h2>Live-Beispiel</h2>
+					</section>
                 </section>
 			</div>
 		</div>
