@@ -1,0 +1,41 @@
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.reveal .title-min {
+    border-bottom: 3px dashed;
+    width: 70%;
+    margin-left: 15%;
+    align: center;
+    color: #d9d9d9;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.reveal .progress {
+    height: 10px;
+}
+
+.headline-fade{
+    display: none;
+}
+
+.text-basic {
+    border-radius: 5px;
+    margin-left: 0;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(179,179,179,0);
+}
+
+#overlay{
+    position: fixed;
+    display: none;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    z-index: 2;
+}

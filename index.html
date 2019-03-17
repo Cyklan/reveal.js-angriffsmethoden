@@ -9,9 +9,10 @@
 		<link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
 		<link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
 		<link rel="stylesheet" href="files/css/main.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="files/js/moment.js"></script>
 		<script src="files/js/pwcalc.js"></script>
+
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="vendor/revealjs/lib/css/zenburn.css">
 
@@ -37,16 +38,29 @@
 	</head>
 	<body>
 		<div class="reveal">
+            <div id="overlay" style="text-align: center; width: auto">
+                <h1 class="text-basic" id="text"></h1>
+            </div>
 			<div class="slides">
 				<section>
-					<h2>Angriffsmethoden</h2> <br>
-					von <a href="#">Jonathan</a> & <a href="#">Nils</a>
-				</section>
-				<section>
-					<section>
-						<h2>Brute Force Angriff</h2>
+					<section data-state="start">
+						<h1 >Angriffsmethoden</h1> <br>
+						von <a href="#">Jonathan</a> & <a href="#">Nils</a>
 					</section>
 					<section>
+						<h2>Inhalt</h2>
+                        <ul>
+                            <li>Allgemeines</li>
+                            <li>Faktor Mensch</li>
+                            <li>physische Zugriffe</li>
+                            <li>Brute Force</li>
+                            <li>Botnetze</li>
+                            <li>Gegenmaßnahmen</li>
+                        </ul>
+					</section>
+				</section>
+				<section>
+					<section data-state="force">
 						<ul>
 							<li>Brute Force (eng. rohe Gewalt)</li>
 							<li>Millionen Passwörter werden durchprobiert</li>
@@ -66,24 +80,56 @@
 						<h2>Live-Beispiel</h2>
 					</section>
                 </section>
+
+
+                <section data-state="source">
+                    <ul style="font-size: xx-large">
+                        <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
+                        <li></li>
+                    </ul>
+                </section>
 			</div>
 		</div>
 
 		<script src="vendor/revealjs/lib/js/head.min.js"></script>
 		<script src="vendor/revealjs/js/reveal.js"></script>
-
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+					{ src: 'vendor/revealjs/plugin/markdown/marked.js' },
+					{ src: 'vendor/revealjs/plugin/markdown/markdown.js' },
+					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
+					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+                parallaxBackgroundImage: 'files/img/80s_poly_dark.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+                // Parallax background size
+                parallaxBackgroundSize: '3440px 1440px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: 200,
+                parallaxBackgroundVertical: 50,
+                width: '70%',
+
+
 			});
+            Reveal.addEventListener( 'start', function() {
+                document.getElementById("overlay").style.display = "block";
+            } );
+            Reveal.addEventListener( 'start', function() {
+                document.getElementById("text").innerText = "";
+            } );
+            Reveal.addEventListener( 'force', function() {
+                document.getElementById("text").innerText = "Brute Force";
+            } );
+            Reveal.addEventListener( 'source', function() {
+                document.getElementById("text").innerText = "Quellen";
+            } );
 		</script>
 	</body>
 </html>

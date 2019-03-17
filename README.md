@@ -13,13 +13,16 @@ a reveal js presentation about it attacks
 
 ## Themen
 - Brute Force (Nils) ✅
+
 - Social engineering (Jonathan)
   - fishing 
   - simulierte fishing tests
+  
 - man in the middle (Jonathan)
   - ausgeben als router
   - schwachstelle im router
   - man in the browser
+  
 - botnetze (Nils)
   - Verwendungszwecke
     - Proxy
@@ -30,18 +33,24 @@ a reveal js presentation about it attacks
     - Ransomware
     - Filesharing
     - Nutzung Rechenleistung (Bitcoin-mining)
+    
 - pysische zugriffe (Jonathan)
   - Keylogger
   - Bad USB (USB Killer oder programme)
   - GSM Wanzen
   - Störsender
   - Lan Turtle
-  - 
-
-- digitale Forensik (Jonathan)
-  - alte entsorgte Festplatten
 
 - Faktor Mensch (Jonathan)
   - Aufschreiben von passwörtern
   - nicht abschließen
   - offensichtlichehinweise (abrieb/fingerabdrücke an zahlen schloss)
+  - alte entsorgte Festplatten
+  
+  
+  
+- Gegenmaßnahmen
+  - Pentest (PenetrationsTest)
+  - Nicht dumm sein
+  - Datenvernichtung
+  
