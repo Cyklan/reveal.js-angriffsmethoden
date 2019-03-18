@@ -33,6 +33,7 @@ hr {
 #overlay{
     position: fixed;
     display: none;
+    height: 15%;
     top: 40px;
     left: 20px;
     right: 20px;
