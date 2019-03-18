@@ -51,6 +51,13 @@ a reveal js presentation about it attacks
   
 - Gegenmaßnahmen
   - Pentest (PenetrationsTest)
+    - Vulnerability Scan
+    - Security Scan
+    - Pen Test
+      - 5 phasen
+      - BlackBox-test / WhiteBox-test
+      - von dritten
+      - nur mit befugnis sonst mögliche straftat
   - Nicht dumm sein
   - Datenvernichtung
   
