@@ -15,8 +15,12 @@ a reveal js presentation about it attacks
 - Brute Force (Nils) ✅
 
 - Social engineering (Jonathan)
-  - fishing 
-  - simulierte fishing tests
+  - Phreaking / Telefon Anrufe
+  - Scareware
+  - fishing  -> mit Statistik (chart.js)
+    - simulierte fishing tests
+  - Dumpster Diving
+  - USB Drops
   
 - man in the middle (Jonathan)
   - ausgeben als router
@@ -26,7 +30,7 @@ a reveal js presentation about it attacks
 - botnetze (Nils)
   - Verwendungszwecke
     - Proxy
-    - DDoS-Attacken / DRDoS-Attacken
+    - DDoS-Attacken / DRDoS-Attacken -> evtl. Statistik
     - Klickbetrug
   - Verwendungszweck intern
     - Zugrif auf Loakle Daten (Sniffer, Password Grabber)
