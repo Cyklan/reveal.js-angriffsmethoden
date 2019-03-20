@@ -24,7 +24,7 @@ a reveal js presentation about it attacks
   - Typosquatting 
   https://www.adn.de/fileadmin/user_upload/Hersteller/Proofpoint/Datenblaetter/pfpt-de-tr-the-human-factor-2018.pdf
   
-- man in the middle (Jonathan)
+- man in the middle (Jonathan) -> diagramm.js Plugin
   - ausgeben als router
   - schwachstelle im router
   - man in the browser
