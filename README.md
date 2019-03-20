@@ -21,6 +21,8 @@ a reveal js presentation about it attacks
     - simulierte fishing tests
   - Dumpster Diving
   - USB Drops
+  - Typosquatting 
+  https://www.adn.de/fileadmin/user_upload/Hersteller/Proofpoint/Datenblaetter/pfpt-de-tr-the-human-factor-2018.pdf
   
 - man in the middle (Jonathan)
   - ausgeben als router
