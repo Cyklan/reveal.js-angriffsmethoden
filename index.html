@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
 		<link rel="stylesheet" href="files/css/main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="vendor/revealjs/plugin/chart/Chart.min.js"></script>
 		<script src="files/js/moment.js"></script>
 		<script src="files/js/pwcalc.js"></script>
 
@@ -38,29 +39,120 @@
 	</head>
 	<body>
 		<div class="reveal">
-            <div id="overlay" style="text-align: center; width: auto">
-                <h1 class="text-basic" id="text"></h1>
-            </div>
 			<div class="slides">
-				<section>
+				<section data-background-video="">
 					<section data-state="start">
 						<h1 >Angriffsmethoden</h1> <br>
 						von <a href="#">Jonathan</a> & <a href="#">Nils</a>
 					</section>
 					<section>
-						<h2>Inhalt</h2>
+						<h1>Inhalt</h1>
                         <ul>
-                            <li>Allgemeines</li>
-                            <li>Faktor Mensch</li>
-                            <li>physische Zugriffe</li>
+                            <li>Social engineering</li>
+                            <li>Physische Attacken</li>
                             <li>Brute Force</li>
                             <li>Botnetze</li>
                             <li>Gegenmaßnahmen</li>
                         </ul>
 					</section>
 				</section>
+                <section>
+                    <section>
+                        <h1>Social engineering</h1>
+                        <h3 style="color: indianred">Schwachstelle Mensch</h3>
+                    </section>
+
+                    <section>
+                            <pre style="width: 45%;font-size: 40px">Informationsbeschaffung</pre>
+                            <pre style="width: 45%;font-size: 40px">Verbindung herstellen</pre>
+                            <pre style="width: 45%;font-size: 40px">Ausnutzen</pre>
+                    </section>
+                    <section>
+                        <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/dumpster.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/scareware.png" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/vishing.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/usb_drop.png" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; top: 20%; left: 20%; width: 60%; height: 60%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/phishing.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                    </section>
+                        <section>
+                            <div>
+                                <h3>Wann wird geklickt</h3>
+                                <canvas id="line-chart" width="800" height="300"></canvas>
+                                <script>
+                                    Chart.defaults.global.defaultFontColor = 'white';
+                                    Chart.defaults.global.defaultFontSize = 15;
+                                    new Chart(document.getElementById("line-chart"), {
+                                        type: 'line',
+                                        data: {
+                                            labels: [0,5,10,15,20,25,30,35,40,45,50,55,60],
+                                            datasets: [{
+                                                data: [0,25,29,32,35,38,41,44,46,48,50,51,52],
+                                                label: "% Anteil an allen Klicks",
+                                                borderColor: "#3e95cd",
+                                                fill: false
+                                            },
+                                            ]
+                                        },
+                                        options: {
+                                            // title: {
+                                            //     display: true,
+                                            //     text: 'Wan wird Geklickt',
+                                            //     fontSize: '40',
+                                            //
+                                            // },
+                                            legend: {
+                                                labels: {
+                                                    // This more specific font property overrides the global property
+                                                    fontColor: 'white'
+
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <h3>Wann wird geklickt</h3>
+                                <canvas id="pie-chart" width="800" height="300"></canvas>
+                                <script>
+                                    new Chart(document.getElementById("pie-chart"), {
+                                        type: 'pie',
+                                        data: {
+                                            labels: ["Einzelnes Ersetzen", "Zusätzliche eingefügt", "Hinzugefügt/Entfernt ", "Latin America", "North America"],
+                                            datasets: [{
+                                                label: "Population (millions)",
+                                                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                                                data: [2478,5267,734,784,433]
+                                            }]
+                                        },
+                                        options: {
+                                            title: {
+                                                display: true,
+                                                text: 'Predicted world population (millions) in 2050'
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </section>
+                </section>
 				<section>
-					<section data-state="force">
+                    <section>
+                        <h1>Brute Force</h1>
+                    </section>
+                    <section data-state="force">
 						<ul>
 							<li>Brute Force (eng. rohe Gewalt)</li>
 							<li>Millionen Passwörter werden durchprobiert</li>
@@ -80,9 +172,12 @@
 						<h2>Live-Beispiel</h2>
 					</section>
                 </section>
+                <section data-background-iframe="https://threatmap.bitdefender.com/">
+                </section>
 
 
                 <section data-state="source">
+                    <h1>Quellen</h1>
                     <ul style="font-size: xx-large">
                         <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
                         <li></li>
@@ -102,12 +197,11 @@
 					{ src: 'vendor/revealjs/plugin/markdown/marked.js' },
 					{ src: 'vendor/revealjs/plugin/markdown/markdown.js' },
 					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
-					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				],
-                parallaxBackgroundImage: 'files/img/80s_poly_dark.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-
+                //parallaxBackgroundImage: 'files/img/80s_poly_dark.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
                 // Parallax background size
-                parallaxBackgroundSize: '3440px 1440px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+                //parallaxBackgroundSize: '3440px 1440px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
                 // Number of pixels to move the parallax background per slide
                 // - Calculated automatically unless specified
@@ -116,20 +210,10 @@
                 parallaxBackgroundVertical: 50,
                 width: '70%',
 
-
 			});
-            Reveal.addEventListener( 'start', function() {
-                document.getElementById("overlay").style.display = "block";
-            } );
-            Reveal.addEventListener( 'start', function() {
-                document.getElementById("text").innerText = "";
-            } );
-            Reveal.addEventListener( 'force', function() {
-                document.getElementById("text").innerText = "Brute Force";
-            } );
-            Reveal.addEventListener( 'source', function() {
-                document.getElementById("text").innerText = "Quellen";
-            } );
+            //Reveal.addEventListener( 'start', function() {
+            //    document.getElementById("overlay").style.display = "block";
+            //} );
 		</script>
 	</body>
 </html>
