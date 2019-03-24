@@ -50,16 +50,17 @@
                         <ul>
                             <li>Social engineering</li>
                             <li>Physische Attacken</li>
+                            <li>MITM</li>
                             <li>Brute Force</li>
                             <li>Botnetze</li>
-                            <li>Gegenmaßnahmen</li>
+                            <li>PEN Test</li>
                         </ul>
 					</section>
 				</section>
                 <section>
                     <section>
                         <h1>Social engineering</h1>
-                        <h3 style="color: indianred">Schwachstelle Mensch</h3>
+                        <h3 style="color: indianred">Faktor Mensch</h3>
                     </section>
 
                     <section>
@@ -84,69 +85,130 @@
                             <img src="files/img/phishing.jpg" style="border-style: none; box-shadow: none">
                         </div>
                     </section>
-                        <section>
-                            <div>
-                                <h3>Wann wird geklickt</h3>
-                                <canvas id="line-chart" width="800" height="300"></canvas>
-                                <script>
-                                    Chart.defaults.global.defaultFontColor = 'white';
-                                    Chart.defaults.global.defaultFontSize = 15;
-                                    new Chart(document.getElementById("line-chart"), {
-                                        type: 'line',
-                                        data: {
-                                            labels: [0,5,10,15,20,25,30,35,40,45,50,55,60],
-                                            datasets: [{
-                                                data: [0,25,29,32,35,38,41,44,46,48,50,51,52],
-                                                label: "% Anteil an allen Klicks",
-                                                borderColor: "#3e95cd",
+                    <section>
+                        <div>
+                            <h3>Typosquatting</h3>
+
+                            <canvas id="pie-chart" width="800" height="300"></canvas>
+                            <script>
+                                new Chart(document.getElementById("pie-chart"), {
+                                    type: 'pie',
+                                    data: {
+                                        labels: ["Einzelnes Ersetzen", "Zusätzliche eingefügt", "+/- Anfang/Ende ", "Entferntes Zeichen", "Gleich mit Bindestrich", "Sonstige"],
+                                        datasets: [{
+                                            label: "Population (millions)",
+                                            backgroundColor: ["#cc0000", "#ff9900","#009900","#33cccc","#3366ff","#9900cc"],
+                                            data: [41,32,13,6,5,3]
+                                        }]
+                                    },
+                                    options: {
+                                        title: {
+                                            display: false,
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </section>
+                    <section>
+                        <table>
+                            <thead><tr>
+                                <th>Beispiel</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>domain.com</td>
+                            </tr>
+                            <tr>
+                                <td>dom<span style="color: red">ia</span>n.com</td>
+                            </tr>
+                            <tr>
+                                <td>domain<span style="color: red">s</span>.com</td>
+                            </tr>
+                            <tr>
+                                <td>doma<span style="color: red">1</span>n.com</td>
+                            </tr>
+                            <tr>
+                                <td>domain.<span style="color: red">cm</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <div>
+                            <h3>Bitcoin Price vs. Number of Registrations</h3>
+                            <canvas id="line-chart" width="800" height="300"></canvas>
+                            <script>
+                                Chart.defaults.global.defaultFontColor = 'white';
+                                Chart.defaults.global.defaultFontSize = 15;
+                                new Chart(document.getElementById("line-chart"), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ["Jan-17","Feb-17","Mar-17","Apr-17","May-17","Jun-17","Aug-17","Sep-17","Oct-17","Nov-17","Dec-17","Jan-18","Feb-18","Mar-18"],
+                                        datasets: [{
+                                            data: [900, 970, 1180, 1170, 1300, 2400, 2460, 2900, 4700, 4300, 6600, 9800, 13200, 7000, 10000],
+                                            label: "Price in US Dollar",
+                                            borderColor: "#f48c42",
+                                            fill: false
+                                        },
+                                            {
+                                                data: [1400, 1000, 1200, 1250 , 1400, 2500, 2650, 3000, 5230, 4900, 7000, 8500, 9000, 3000, 1000],
+                                                label: "Anzahl der Registrierungen",
+                                                borderColor: "#f44141",
                                                 fill: false
                                             },
-                                            ]
-                                        },
-                                        options: {
-                                            // title: {
-                                            //     display: true,
-                                            //     text: 'Wan wird Geklickt',
-                                            //     fontSize: '40',
-                                            //
-                                            // },
-                                            legend: {
-                                                labels: {
-                                                    // This more specific font property overrides the global property
-                                                    fontColor: 'white'
+                                        ]
+                                    },
+                                    options: {
+                                        // title: {
+                                        //     display: true,
+                                        //     text: 'Wan wird Geklickt',
+                                        //     fontSize: '40',
+                                        //
+                                        // },
+                                        legend: {
+                                            labels: {
+                                                // This more specific font property overrides the global property
+                                                fontColor: 'white'
 
-                                                }
                                             }
                                         }
-                                    });
-                                </script>
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Man-in-the-middle</h1>
+                    </section>
+                    <section>
+                            <div >
+                                <pre style="width: fit-content;font-size: 40px">Client</pre>
+                                <pre style="width: fit-content;font-size: 40px">MITM</pre>
+                                <pre style="width: fit-content;font-size: 40px">Server</pre>
                             </div>
-                        </section>
-                        <section>
-                            <div>
-                                <h3>Wann wird geklickt</h3>
-                                <canvas id="pie-chart" width="800" height="300"></canvas>
-                                <script>
-                                    new Chart(document.getElementById("pie-chart"), {
-                                        type: 'pie',
-                                        data: {
-                                            labels: ["Einzelnes Ersetzen", "Zusätzliche eingefügt", "Hinzugefügt/Entfernt ", "Latin America", "North America"],
-                                            datasets: [{
-                                                label: "Population (millions)",
-                                                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-                                                data: [2478,5267,734,784,433]
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: 'Predicted world population (millions) in 2050'
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
-                        </section>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Physische Attacken</h1>
+                    </section>
+                    <section>
+                        <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/keylogger.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/gsm_wanze.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/proxmark3-1a.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                        <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
+                            <img src="files/img/lan-turtle-1200.jpg" style="border-style: none; box-shadow: none">
+                        </div>
+                    </section>
                 </section>
 				<section>
                     <section>
@@ -175,11 +237,25 @@
                 <section data-background-iframe="https://threatmap.bitdefender.com/">
                 </section>
 
+                <section>
+                    <section>
+                        <h1>PEN Test</h1>
+                    </section>
+                    <section>
+                        <div >
+                            <pre style="width: fit-content;font-size: 40px">Client</pre>
+                            <pre style="width: fit-content;font-size: 40px">MITM</pre>
+                            <pre style="width: fit-content;font-size: 40px">Server</pre>
+                        </div>
+                    </section>
+                </section>
+
 
                 <section data-state="source">
                     <h1>Quellen</h1>
                     <ul style="font-size: xx-large">
                         <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
+                        <li>https://www.adn.de/fileadmin/user_upload/Hersteller/Proofpoint/Datenblaetter/pfpt-de-tr-the-human-factor-2018.pdf</li>
                         <li></li>
                     </ul>
                 </section>
@@ -196,6 +272,8 @@
 				dependencies: [
 					{ src: 'vendor/revealjs/plugin/markdown/marked.js' },
 					{ src: 'vendor/revealjs/plugin/markdown/markdown.js' },
+					{ src: 'vendor/revealjs/plugin/diagram/d3js.js' },
+					{ src: 'vendor/revealjs/plugin/diagram/d3.js' },
 					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
 					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				],
