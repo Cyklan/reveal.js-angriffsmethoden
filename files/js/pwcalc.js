@@ -1,6 +1,19 @@
 function calcTime (time) {
-    moment.locale()
-    return moment().seconds(Math.ceil(time)).fromNow() 
+    // seconds to days
+    let days = time / 86400
+    if (days < 2) {
+        let hours = Math.floor(time / 60 / 60)
+        let minutes = Math.floor(time / 60) % 60
+        let seconds = Math.floor(time - (minutes * 60) - (hours * 60 * 60))
+        return `${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`
+    }
+    days = Math.floor(days)
+    let date = new Date();
+    let last = new Date(date.getTime() + (days * 24 * 60 * 60 * 1000))
+    let day = last.getDate()
+    let month = last.getMonth() + 1
+    let year = last.getFullYear()
+    return `${day}.${month}.${year}`
 }
 
 function hasNumber(s) {
