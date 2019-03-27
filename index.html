@@ -1,351 +1,384 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
-		<link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
-		<link rel="stylesheet" href="files/css/main.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="vendor/revealjs/plugin/chart/Chart.min.js"></script>
-		<script src="files/js/pwcalc.js"></script>
+    <link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
+    <link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
+    <link rel="stylesheet" href="files/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="vendor/revealjs/plugin/chart/Chart.min.js"></script>
+    <script src="files/js/pwcalc.js"></script>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="vendor/revealjs/lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="vendor/revealjs/lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'vendor/revealjs/css/print/pdf.css' : 'vendor/revealjs/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'vendor/revealjs/css/print/pdf.css' : 'vendor/revealjs/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
 
-			// pw calc input
+        // pw calc input
 
-			$(document).ready(() => {
-				$("#password-calc").on('keyup', function (e) {
-					if (e.keyCode == 13) {
-						calcPW()
-					}
-				})
-			})
+        $(document).ready(() => {
+            $("#password-calc").on('keyup', function (e) {
+                if (e.keyCode == 13) {
+                    calcPW()
+                }
+            })
+        })
 
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background-video="">
-					<section data-state="start">
-						<h1 >Angriffsmethoden</h1> <br>
-						von <a href="#">Jonathan</a> & <a href="#">Nils</a>
-					</section>
-					<section>
-						<h1>Inhalt</h1>
-                        <ul>
-                            <li>Social engineering</li>
-                            <li>Physische Attacken</li>
-                            <li>MITM</li>
-                            <li>Brute Force</li>
-                            <li>Botnetze</li>
-                            <li>PEN Test</li>
-                        </ul>
-					</section>
-				</section>
-                <section>
-                    <section>
-                        <h1>Social engineering</h1>
-                        <h3 style="color: indianred">Faktor Mensch</h3>
-                    </section>
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div style="position: absolute; left: -17px;display: none;" id="overlay">
+        <img src="files/img/bookmark.png" style="left: 1%">
+        <ul style="list-style-type: none; font-size: 24px; position: absolute; padding: 5px;left: 40px;top: 20px; font-weight: bold; color: rgba(255,255,255,0.9)">
+            <li>Social Engineering</li>
+            <li>MITM</li>
+            <li>Physische Attacken</li>
+            <li>Brute Force</li>
+            <li>Botnetze</li>
+            <li>PEN-Test</li>
+        </ul>
+    </div>
+    <div class="slides">
+        <section data-background-video="">
+            <section data-state="start">
+                <h1>Angriffsmethoden</h1> <br>
+                von <a href="#">Jonathan</a> & <a href="#">Nils</a>
+            </section>
+            <section>
+                <h1>Inhalt</h1>
+                <ul>
+                    <li>Social engineering</li>
+                    <li>MITM</li>
+                    <li>Physische Attacken</li>
+                    <li>Brute Force</li>
+                    <li>Botnetze</li>
+                    <li>PEN Test</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section data-state="social">
+                <h1>Social engineering</h1>
+                <h3 style="color: indianred">Faktor Mensch</h3>
 
-                    <section>
-                            <pre style="width: 45%;font-size: 40px">Informationsbeschaffung</pre>
-                            <pre style="width: 45%;font-size: 40px">Verbindung herstellen</pre>
-                            <pre style="width: 45%;font-size: 40px">Ausnutzen</pre>
-                    </section>
-                    <section>
-                        <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/dumpster.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/scareware.png" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/vishing.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/usb_drop.png" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; top: 20%; left: 20%; width: 60%; height: 60%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/phishing.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-			    <aside class="notes">
-				Dumpster Diving = Müll durchsuchen - durchschnittlicher wert ca. 31.000€ in den usa
-				ScareWare = einschüchterung
-				Phreaking = Telefone anrufe
-				USB-Drop = von keylogger bis zu schadsoftware
-				Phishing = ausspähen der Daten durch Browser oder emails
-			</aside>
-                    </section>
-                    <section>
-                        <div>
-                            <h3>Typosquatting</h3>
+            </section>
 
-                            <canvas id="pie-chart" width="800" height="300"></canvas>
-                            <script>
-                                new Chart(document.getElementById("pie-chart"), {
-                                    type: 'pie',
-                                    data: {
-                                        labels: ["Einzelnes Ersetzen", "Zusätzliche eingefügt", "+/- Anfang/Ende ", "Entferntes Zeichen", "Gleich mit Bindestrich", "Sonstige"],
-                                        datasets: [{
-                                            label: "Population (millions)",
-                                            backgroundColor: ["#cc0000", "#ff9900","#009900","#33cccc","#3366ff","#9900cc"],
-                                            data: [41,32,13,6,5,3]
-                                        }]
+            <section>
+                <pre style="width: fit-content;font-size: 40px">Informationsbeschaffung</pre>
+                <pre style="width: fit-content;font-size: 40px">Verbindung herstellen</pre>
+                <pre style="width: fit-content;font-size: 40px">Ausnutzen</pre>
+            </section>
+            <section>
+                <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/dumpster.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/scareware.png" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/vishing.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/usb_drop.png" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; top: 20%; left: 20%; width: 60%; height: 60%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/phishing.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <aside class="notes">
+                    Dumpster Diving = Müll durchsuchen - durchschnittlicher wert ca. 31.000€ in den usa
+                    ScareWare = einschüchterung
+                    Phreaking = Telefone anrufe
+                    USB-Drop = von keylogger bis zu schadsoftware
+                    Phishing = ausspähen der Daten durch Browser oder emails
+                </aside>
+            </section>
+            <section>
+                <div>
+                    <h3>Typosquatting</h3>
+
+                    <canvas id="pie-chart" width="800" height="300"></canvas>
+                    <script>
+                        new Chart(document.getElementById("pie-chart"), {
+                            type: 'pie',
+                            data: {
+                                labels: ["Einzelnes Ersetzen", "Zusätzliche eingefügt", "+/- Anfang/Ende ", "Entferntes Zeichen", "Gleich mit Bindestrich", "Sonstige"],
+                                datasets: [{
+                                    label: "Population (millions)",
+                                    backgroundColor: ["#cc0000", "#ff9900", "#009900", "#33cccc", "#3366ff", "#9900cc"],
+                                    data: [41, 32, 13, 6, 5, 3]
+                                }]
+                            },
+                            options: {
+                                title: {
+                                    display: false,
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </section>
+            <section>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Beispiel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>domain.com</td>
+                    </tr>
+                    <tr>
+                        <td>dom<span style="color: red">ia</span>n.com</td>
+                    </tr>
+                    <tr>
+                        <td>domain<span style="color: red">s</span>.com</td>
+                    </tr>
+                    <tr>
+                        <td>doma<span style="color: red">1</span>n.com</td>
+                    </tr>
+                    <tr>
+                        <td>domain.<span style="color: red">cm</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <div>
+                    <h3>Bitcoin Price vs. Number of Registrations</h3>
+                    <canvas id="line-chart" width="800" height="300"></canvas>
+                    <script>
+                        Chart.defaults.global.defaultFontColor = 'white';
+                        Chart.defaults.global.defaultFontSize = 15;
+                        new Chart(document.getElementById("line-chart"), {
+                            type: 'line',
+                            data: {
+                                labels: ["Jan-17", "Feb-17", "Mar-17", "Apr-17", "May-17", "Jun-17", "Aug-17", "Sep-17", "Oct-17", "Nov-17", "Dec-17", "Jan-18", "Feb-18", "Mar-18"],
+                                datasets: [{
+                                    data: [900, 970, 1180, 1170, 1300, 2400, 2460, 2900, 4700, 4300, 6600, 9800, 13200, 7000, 10000],
+                                    label: "Price in US Dollar",
+                                    borderColor: "#f48c42",
+                                    fill: false
+                                },
+                                    {
+                                        data: [1400, 1000, 1200, 1250, 1400, 2500, 2650, 3000, 5230, 4900, 7000, 8500, 9000, 3000, 1000],
+                                        label: "Anzahl der Registrierungen",
+                                        borderColor: "#f44141",
+                                        fill: false
                                     },
-                                    options: {
-                                        title: {
-                                            display: false,
-                                        }
+                                ]
+                            },
+                            options: {
+                                // title: {
+                                //     display: true,
+                                //     text: 'Wan wird Geklickt',
+                                //     fontSize: '40',
+                                //
+                                // },
+                                legend: {
+                                    labels: {
+                                        // This more specific font property overrides the global property
+                                        fontColor: 'white'
+
                                     }
-                                });
-                            </script>
-                        </div>
-                    </section>
-                    <section>
-                        <table>
-                            <thead><tr>
-                                <th>Beispiel</th>
-                            </tr></thead>
-                            <tbody>
-                            <tr>
-                                <td>domain.com</td>
-                            </tr>
-                            <tr>
-                                <td>dom<span style="color: red">ia</span>n.com</td>
-                            </tr>
-                            <tr>
-                                <td>domain<span style="color: red">s</span>.com</td>
-                            </tr>
-                            <tr>
-                                <td>doma<span style="color: red">1</span>n.com</td>
-                            </tr>
-                            <tr>
-                                <td>domain.<span style="color: red">cm</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section>
-                        <div>
-                            <h3>Bitcoin Price vs. Number of Registrations</h3>
-                            <canvas id="line-chart" width="800" height="300"></canvas>
-                            <script>
-                                Chart.defaults.global.defaultFontColor = 'white';
-                                Chart.defaults.global.defaultFontSize = 15;
-                                new Chart(document.getElementById("line-chart"), {
-                                    type: 'line',
-                                    data: {
-                                        labels: ["Jan-17","Feb-17","Mar-17","Apr-17","May-17","Jun-17","Aug-17","Sep-17","Oct-17","Nov-17","Dec-17","Jan-18","Feb-18","Mar-18"],
-                                        datasets: [{
-                                            data: [900, 970, 1180, 1170, 1300, 2400, 2460, 2900, 4700, 4300, 6600, 9800, 13200, 7000, 10000],
-                                            label: "Price in US Dollar",
-                                            borderColor: "#f48c42",
-                                            fill: false
-                                        },
-                                            {
-                                                data: [1400, 1000, 1200, 1250 , 1400, 2500, 2650, 3000, 5230, 4900, 7000, 8500, 9000, 3000, 1000],
-                                                label: "Anzahl der Registrierungen",
-                                                borderColor: "#f44141",
-                                                fill: false
-                                            },
-                                        ]
-                                    },
-                                    options: {
-                                        // title: {
-                                        //     display: true,
-                                        //     text: 'Wan wird Geklickt',
-                                        //     fontSize: '40',
-                                        //
-                                        // },
-                                        legend: {
-                                            labels: {
-                                                // This more specific font property overrides the global property
-                                                fontColor: 'white'
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Man-in-the-middle</h1>
+            </section>
+            <section>
+                <div>
+                    <pre style="width: fit-content;font-size: 40px">Client</pre>
+                    <pre style="width: fit-content;font-size: 40px">MITM</pre>
+                    <pre style="width: fit-content;font-size: 40px">Server</pre>
+                </div>
+                <aside class="notes">
+                    Abhören der Communikation
+                    Arp-Spoofing oder schwachstellen im Router ausnutzen
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Physische Attacken</h1>
+            </section>
+            <section>
+                <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/keylogger.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/gsm_wanze.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/proxmark3-1a.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;"
+                     class="fragment fade-in-then-semi-out">
+                    <img src="files/img/lan-turtle-1200.jpg" style="border-style: none; box-shadow: none">
+                </div>
+                <aside class="notes">
+                    Keylogger = Mitschneiden aller eingaben
+                    GSM Wanze = Glbal System for mobile Communication -> Handy netz -> Aktiv oder passiv
+                    Proxmark = RFID Scannen und Kopieren
+                    Lan Turtle = Internen Netzzugang schaffen
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Brute Force</h1>
+            </section>
+            <section data-state="force">
+                <ul>
+                    <li>Brute Force (eng. rohe Gewalt)</li>
+                    <li>Millionen Passwörter werden durchprobiert</li>
+                </ul>
+            </section>
+            <section>
+                <input type="password" name="password" id="password-calc"> <br> <br>
+                <button onclick="calcPW()">Berechnen</button>
+                <br> <br>
+                <span id="pw-length"></span>
+            </section>
+            <section>
+                <pre style="width: fit-content;font-size: 40px">D0g.....................</pre>
+                oder <br>
+                <pre style="width: fit-content;font-size: 40px">PrXyc.N(n4k77#L!eVdAfp9</pre>
+            </section>
+            <section>
+                <h2>Live-Beispiel</h2>
+            </section>
+        </section>
+        <section data-background-iframe="https://threatmap.bitdefender.com/">
+        </section>
 
-                                            }
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>Man-in-the-middle</h1>
-                    </section>
-                    <section>
-                            <div >
-                                <pre style="width: fit-content;font-size: 40px">Client</pre>
-                                <pre style="width: fit-content;font-size: 40px">MITM</pre>
-                                <pre style="width: fit-content;font-size: 40px">Server</pre>
-                            </div>
-			    <aside class="notes">
-				Abhören der Communikation
-				    Arp-Spoofing oder schwachstellen im Router ausnutzen
-			</aside>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h1>Physische Attacken</h1>
-                    </section>
-                    <section>
-                        <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/keylogger.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/gsm_wanze.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/proxmark3-1a.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-                        <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;" class="fragment fade-in-then-semi-out">
-                            <img src="files/img/lan-turtle-1200.jpg" style="border-style: none; box-shadow: none">
-                        </div>
-			    <aside class="notes">
-				Keylogger = Mitschneiden aller eingaben
-				GSM Wanze = Glbal System for mobile Communication -> Handy netz -> Aktiv oder passiv
-				Proxmark = RFID Scannen und Kopieren
-				Lan Turtle = Internen Netzzugang schaffen
-			</aside>
-                    </section>
-                </section>
-				<section>
-                    <section>
-                        <h1>Brute Force</h1>
-                    </section>
-                    <section data-state="force">
-						<ul>
-							<li>Brute Force (eng. rohe Gewalt)</li>
-							<li>Millionen Passwörter werden durchprobiert</li>
-						</ul>
-					</section>
-					<section>
-						<input type="password" name="password" id="password-calc"> <br> <br>
-						<button onclick="calcPW()">Berechnen</button> <br> <br>
-						<span id="pw-length"></span>
-					</section>
-					<section>
-                        <pre style="width: fit-content;font-size: 40px">D0g.....................</pre>                        
-						oder <br>
-                        <pre style="width: fit-content;font-size: 40px">PrXyc.N(n4k77#L!eVdAfp9</pre> 
-					</section>
-					<section>
-						<h2>Live-Beispiel</h2>
-					</section>
-                </section>
-                <section data-background-iframe="https://threatmap.bitdefender.com/">
-                </section>
-
-                <section>
-                    <section>
-                        <h1>PEN Test</h1>
-                    </section>
-			<section>
-                        <div >
-                            <pre style="width: fit-content;font-size: 40px">Vulnerability Asessment</pre>
-                            <pre style="width: fit-content;font-size: 40px">Penetration Test</pre>
-                        </div>
-				<aside class="notes">
-				Vulnerability Assesment = Maschniller Scan aller bekannten Schwachstellen
-					kann zu False positives FÜhren da nicht getestet wird ob die Schwachstelle wirklich angreifbar ist
-				Penetrationstest = größstenteils Manuelle eindringungsversuche
-			</aside>
-                    </section>
-                    <section>
-                        <div >
-                            <pre style="width: fit-content;font-size: 40px">Vorbereitung</pre>
-                            <pre style="width: fit-content;font-size: 40px">Informationsbeschaffung</pre>
-                            <pre style="width: fit-content;font-size: 40px">Bewertung</pre>
-				<pre style="width: fit-content;font-size: 40px">Angreifen</pre>
-				<pre style="width: fit-content;font-size: 40px">Bericht</pre>
-                        </div>
-			<aside class="notes">
-				Vorbereitung = Grenzen mit Kunden Besprechen und Absichern
-				Inforamtionsbeschaffung = Auskundschaften des Systems
-				Bewerbtung = Gefundene Informationen Auswerten
-				Angreifen = Penetrationstest mithilfe der gesammlenten Informationen
-				Bericht = Rückmeldung der Gefunden schwachstellen an den Kunden
-			</aside>
-                    </section>
-			<section>
-                        <div style="float: left; width: 30%">
-				<p>Black Box</p>
-			</div>
-			<div style="width: 30%">
-				<p>Grey Box</p>
-			</div>
-			<div style="width: 30%">
-				<p>White Box</p>
-			</div>
-			<aside class="notes">
-				Black Box = Kein Wissen über Inhalte -> Genereal Tests
-				Grey Box = Nur internes Wissen das für den Test notwendig ist
-				Whtite Box = Komplettes Wissen über Inhalt -> Unit Tests
-			</aside>
-                    </section>
-                </section>
+        <section>
+            <section>
+                <h1>PEN Test</h1>
+            </section>
+            <section>
+                <div>
+                    <pre style="width: fit-content;font-size: 40px">Vulnerability Asessment</pre>
+                    <p style="font-size: 45px">!=</p>
+                    <pre style="width: fit-content;font-size: 40px">Penetration Test</pre>
+                </div>
+                <aside class="notes">
+                    Vulnerability Assesment = Maschniller Scan aller bekannten Schwachstellen
+                    kann zu False positives FÜhren da nicht getestet wird ob die Schwachstelle wirklich angreifbar ist
+                    Penetrationstest = größstenteils Manuelle eindringungsversuche
+                </aside>
+            </section>
+            <section>
+                <div>
+                    <pre style="width: fit-content;font-size: 40px">Vorbereitung</pre>
+                    <pre style="width: fit-content;font-size: 40px">Informationsbeschaffung</pre>
+                    <pre style="width: fit-content;font-size: 40px">Bewertung</pre>
+                    <pre style="width: fit-content;font-size: 40px">Angreifen</pre>
+                    <pre style="width: fit-content;font-size: 40px">Bericht</pre>
+                </div>
+                <aside class="notes">
+                    Vorbereitung = Grenzen mit Kunden Besprechen und Absichern
+                    Inforamtionsbeschaffung = Auskundschaften des Systems
+                    Bewerbtung = Gefundene Informationen Auswerten
+                    Angreifen = Penetrationstest mithilfe der gesammlenten Informationen
+                    Bericht = Rückmeldung der Gefunden schwachstellen an den Kunden
+                </aside>
+            </section>
+            <section>
+                <div style="background-color: black; position: absolute; height: 250px; width: 250px; left: 15%;">
+                    <p/>
+                </div>
+                <div style="background-color: darkgrey; position: absolute; height: 250px; width: 250px; left: 40%;">
+                    <p/>
+                </div>
+                <div style="background-color: white; position: absolute; height: 250px; width: 250px; right: 15%;">
+                    <p/>
+                </div>
+                <aside class="notes">
+                    Black Box = Kein Wissen über Inhalte -> Genereal Tests
+                    Grey Box = Nur internes Wissen das für den Test notwendig ist
+                    Whtite Box = Komplettes Wissen über Inhalt -> Unit Tests
+                </aside>
+            </section>
+        </section>
 
 
-                <section data-state="source">
-                    <h1>Quellen</h1>
-                    <ul style="font-size: xx-large">
-                        <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
-                        <li>https://www.adn.de/fileadmin/user_upload/Hersteller/Proofpoint/Datenblaetter/pfpt-de-tr-the-human-factor-2018.pdf</li>
-                        <li>https://www.grc.com/haystack.htm</li>
-			    <li>http://softwaretestingfundamentals.com/differences-between-black-box-testing-and-white-box-testing/</li>
-			    <li>https://www.scnsoft.com/blog/vulnerability-assessment-vs-penetration-testing</li>
-                    </ul>
-                </section>
-			</div>
-		</div>
+        <section data-state="source">
+            <h1>Quellen</h1>
+            <ul style="font-size: xx-large">
+                <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
+                <li>
+                    https://www.adn.de/fileadmin/user_upload/Hersteller/Proofpoint/Datenblaetter/pfpt-de-tr-the-human-factor-2018.pdf
+                </li>
+                <li>https://www.grc.com/haystack.htm</li>
+                <li>
+                    http://softwaretestingfundamentals.com/differences-between-black-box-testing-and-white-box-testing/
+                </li>
+                <li>https://www.scnsoft.com/blog/vulnerability-assessment-vs-penetration-testing</li>
+            </ul>
+        </section>
+    </div>
+</div>
 
-		<script src="vendor/revealjs/lib/js/head.min.js"></script>
-		<script src="vendor/revealjs/js/reveal.js"></script>
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'vendor/revealjs/plugin/markdown/marked.js' },
-					{ src: 'vendor/revealjs/plugin/markdown/markdown.js' },
-					{ src: 'vendor/revealjs/plugin/diagram/d3js.js' },
-					{ src: 'vendor/revealjs/plugin/diagram/d3.js' },
-					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
-					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				],
-                //parallaxBackgroundImage: 'files/img/80s_poly_dark.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-                // Parallax background size
-                //parallaxBackgroundSize: '3440px 1440px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+<script src="vendor/revealjs/lib/js/head.min.js"></script>
+<script src="vendor/revealjs/js/reveal.js"></script>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'vendor/revealjs/plugin/markdown/marked.js'},
+            {src: 'vendor/revealjs/plugin/markdown/markdown.js'},
+            {src: 'vendor/revealjs/plugin/diagram/d3js.js'},
+            {src: 'vendor/revealjs/plugin/diagram/d3.js'},
+            {src: 'vendor/revealjs/plugin/notes/notes.js', async: true},
+            {
+                src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+        ],
+        //parallaxBackgroundImage: 'files/img/80s_poly_dark.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+        // Parallax background size
+        //parallaxBackgroundSize: '3440px 1440px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
-                // Number of pixels to move the parallax background per slide
-                // - Calculated automatically unless specified
-                // - Set to 0 to disable movement along an axis
-                parallaxBackgroundHorizontal: 200,
-                parallaxBackgroundVertical: 50,
-                width: '70%',
+        // Number of pixels to move the parallax background per slide
+        // - Calculated automatically unless specified
+        // - Set to 0 to disable movement along an axis
+        parallaxBackgroundHorizontal: 200,
+        parallaxBackgroundVertical: 50,
+        width: '70%',
 
-			});
-            //Reveal.addEventListener( 'start', function() {
-            //    document.getElementById("overlay").style.display = "block";
-            //} );
-		</script>
-	</body>
+    });
+    Reveal.addEventListener( 'social', function() {
+        document.getElementById("overlay").style.display = "contents";
+    } );
+</script>
+</body>
 </html>
