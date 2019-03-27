@@ -1,0 +1,46 @@
+Was sind Botnetze? (https://www.bsi-fuer-buerger.de/BSIFB/DE/Risiken/BotNetze/botnetze_node.html)
+- netzwerk aus PCs infiziert mit Schadsoftware
+- diese werden benutzt, um verschiedene Angriffe von vielen geräten gleichzeitig zu starten
+- infizierte PCs sind Bots / Zombies
+
+Nutzungszwecke:
+- Proxyserver (http://fineproxy.de/blog/botnet-proxyserver/)
+  - Webanfrage wird von master an Bot geschickt
+  - Bot fährt Webanfrage durch
+  - Antwort wird von Bot an Master gegeben
+
+- DDoS (distributed denial of service) https://www.cloudflare.com/learning/ddos/what-is-a-ddos-botnet/
+  - Angriff wird auf viele Hosts aufgeteilt
+  - Service mit Anfragen überfordern und abstürzen lassen
+    - DNS Flood
+      - Botnetze "fluten" DNS Server mit Anfragen und bringen ihn zum Abstürzen
+    - HTTP Flood
+      - Webserver wird mit HTTP Requests "geflutet" und durch zu viele Anfragen zum Abstürzen gebracht
+    - Ping of Death
+      - ICMP Protokoll
+      -	Reguläre Max Ping Size: 65535 (2 Byte)
+      - Größeres Paket schicken -> in mehrere Segmente unterteilt (unter 2 Byte groß) -> Server baut zusammen -> Buffer Overflow -> Aufhängen, abstürzen, neustarten
+  - DDoS Tools
+    - LOIC (Low Orbit Ion Cannon)
+      - Entwickelt von Anonymous
+      - HTTP Flood
+      - LOIC Botnet hat 2008 die Website von Scientology lahm gelegt
+    - HOIC (High Orbit Ion Cannon)
+      - Entwickelt von Anonymous
+      - HOIC funktioniert wie LOIC, hat aber mehr Features (z.B. kann mehrere Seiten gleichzeitig angreifen, eingebaute Spurenverwischungsscripts)
+      - Braucht mindestens 50 Nutzer, um Attacke gegen eine Seite zu starten
+      - HOIC Botnet hat 2012 das FBI lahm gelegt
+
+- Klickbetrug (https://www.pcwelt.de/news/Allzeithoch-Klickbetrug-mit-Botnets-180275.html)
+  - Online Werbung basiert auf Klicks
+  - Websites werden im Hintergrund aufgerufen, Werbung wird angeklickt
+  - Botnet 3VE aktiv von 2014 - Ende 2018, 30 Millionen$ Profit (https://thehackernews.com/2018/11/3ve-ad-fraud-google.html)
+
+- Rechenleistung des Hosts ausnutzen
+  - Crypto Mining
+
+- Botnet Ransomware
+  - Ransomware ist software, die den PC "als Geisel hält"(Beispiel: WannaCry)
+  - Ransomware mit Botnet Characteristik: https://blog.trendmicro.de/eine-ransomware-mit-botnet-faehigkeiten/
+
+- Allgemeine Trojaner-Eigenschaften
