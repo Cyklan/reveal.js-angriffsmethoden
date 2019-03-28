@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
     <link rel="stylesheet" href="vendor/revealjs/css/theme/black.css">
     <link rel="stylesheet" href="files/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="vendor/revealjs/plugin/chart/Chart.min.js"></script>
     <script src="files/js/pwcalc.js"></script>
@@ -75,30 +76,30 @@
             </section>
 
             <section>
-                <pre style="width: fit-content;font-size: 40px">Informationsbeschaffung</pre>
-                <pre style="width: fit-content;font-size: 40px">Verbindung herstellen</pre>
-                <pre style="width: fit-content;font-size: 40px">Ausnutzen</pre>
+                <pre>Informationsbeschaffung</pre>
+                <pre>Verbindung herstellen</pre>
+                <pre>Ausnutzen</pre>
             </section>
             <section>
                 <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/dumpster.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/dumpster.jpg" >
                 </div>
                 <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/scareware.png" style="border-style: none; box-shadow: none">
+                    <img src="files/img/scareware.png" >
                 </div>
                 <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/vishing.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/vishing.jpg" >
                 </div>
                 <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/usb_drop.png" style="border-style: none; box-shadow: none">
+                    <img src="files/img/usb_drop.png" >
                 </div>
                 <div style="position: fixed; top: 20%; left: 20%; width: 60%; height: 60%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/phishing.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/phishing.jpg" >
                 </div>
                 <aside class="notes">
                     Dumpster Diving = Müll durchsuchen - durchschnittlicher wert ca. 31.000€ in den usa
@@ -210,9 +211,9 @@
             </section>
             <section>
                 <div>
-                    <pre style="width: fit-content;font-size: 40px">Client</pre>
-                    <pre style="width: fit-content;font-size: 40px">MITM</pre>
-                    <pre style="width: fit-content;font-size: 40px">Server</pre>
+                    <pre>Client</pre>
+                    <pre>MITM</pre>
+                    <pre>Server</pre>
                 </div>
                 <aside class="notes">
                     Abhören der Communikation
@@ -227,19 +228,19 @@
             <section>
                 <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/keylogger.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/keylogger.jpg" >
                 </div>
                 <div style="position: fixed; top: 2%; right: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/gsm_wanze.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/gsm_wanze.jpg" >
                 </div>
                 <div style="position: fixed; bottom: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/proxmark3-1a.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/proxmark3-1a.jpg" >
                 </div>
                 <div style="position: fixed; bottom: 2%; right: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
-                    <img src="files/img/lan-turtle-1200.jpg" style="border-style: none; box-shadow: none">
+                    <img src="files/img/lan-turtle-1200.jpg" >
                 </div>
                 <aside class="notes">
                     Keylogger = Mitschneiden aller eingaben
@@ -254,38 +255,124 @@
                 <h1>Brute Force</h1>
             </section>
             <section data-state="force">
-                <ul>
-                    <li>Brute Force (eng. rohe Gewalt)</li>
-                    <li>Millionen Passwörter werden durchprobiert</li>
-                </ul>
+                <pre>Brute Force (<i class="fas fa-arrow-right"></i> rohe Gewalt)</pre>
+                <pre>Millionen Passwörter werden durchprobiert</pre>
+                <pre><a href="https://haveibeenpwned.com/">HaveIBeenPwned.com</a></pre> 
+                <aside class="notes">
+                    Im Internet gibt es diverse Listen mit Millionen von Passwörtern<br>
+                </aside>
             </section>
             <section>
                 <input type="password" name="password" id="password-calc"> <br> <br>
                 <button onclick="calcPW()">Berechnen</button>
                 <br> <br>
                 <span id="pw-length"></span>
+                <aside class="notes">
+                    Passwortstärke setzt sich zusammen aus Anzahl verschiedener Zeichen & Länge<br>
+                    (Nach einfachen Worten im Wörterbuch fragen)
+                </aside>
             </section>
             <section>
-                <pre style="width: fit-content;font-size: 40px">D0g.....................</pre>
+                <pre>D0g.....................</pre>
                 oder <br>
-                <pre style="width: fit-content;font-size: 40px">PrXyc.N(n4k77#L!eVdAfp9</pre>
+                <pre>PrXyc.N(n4k77#L!eVdAfp9</pre>
+                <aside class="notes">
+                    Was dauert länger? (D0g) <br>
+                    Warum? ist länger und hat gleich viele Möglichkeiten
+                </aside>
             </section>
             <section>
                 <h2>Live-Beispiel</h2>
+                <aside class="notes">
+                    Passwort von Mensch in Klasse festlegen lassen
+                </aside>
             </section>
         </section>
         <section data-background-iframe="https://threatmap.bitdefender.com/">
         </section>
-
+        <section>
+            <section>
+                <h1>Botnetz</h1>
+            </section>
+            <section>
+                <pre>Netzwerk aus PCs infiziert mit Botprogramm</pre>
+                <pre>Infizierte PCs sind Bots <i class="fas fa-robot"></i> / Zombies</pre>
+                <pre>Viele verschiedene Angriffsmethoden</pre>
+            </section>
+            <section>
+                <h1>Botnetz-Proxy</h1><br>
+                <span class="fragment"><i class="fas fa-podcast proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-robot proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-server proxy" style="margin-right: 0px !important"></i></span><br><br><br>
+                <span class="fragment"><i class="fas fa-server proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-robot proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-podcast proxy" style="margin-right: 0px !important"></i></span>
+                <aside class="notes">
+                    Master schickt Anfrage an Bot. Bot fragt Webserver an.<br>
+                    Webserver antwortet Bot. Bot leitet Antwort an Master zurück.
+                </aside>
+            </section>
+            <section>
+                <h2>DDoS</h2>
+                <pre>Angriff wird auf viele Bots aufgeteilt</pre>
+                <pre>Service wird mit Anfragen bombardiert
+<i class="fas fa-arrow-right"></i> Service ist nicht mehr erreichbar</pre>
+            </section>
+            <section>
+                <pre><h2>DNS Flood</h2>DNS Server wird mit Anfragen "überflutet"</pre><br>
+                <pre><h2>HTTP Flood</h2>Webserver wird mit Anfragen "überflutet"</pre>
+            </section>
+            <section>
+                <h2>LOIC</h2><pre>Entwickelt von <a href="https://github.com/NewEraCracker/LOIC">"NewEraCracker"</a></pre>
+                <pre>HTTP Flood</pre>
+            </section>
+            <section>
+                <img src="./files/img/LOIC.png" alt="" style="width:91%">
+            </section>
+            <section>
+                <h2>HOIC</h2><pre>Entwickelt von Anonymous</pre>
+                <pre>LOIC 2.0</pre>
+                <pre>Benötigt mindestens 50 Nutzer</pre>
+            </section>
+            <section>
+                <img src="./files/img/HOIC.png" alt="">
+            </section>
+            <section>
+                <h2>Klickbetrug</h2>
+                <pre>Online Bannerwerbung basiert auf Klicks</pre>
+                <pre>Bots klicken im Hintergrund auf Werbung, um Geld zu verdienen</pre>
+                <pre>Sehr lukrativ</pre>
+                <aside class="notes">
+                    Botnet 3VE hat von 2014 - 2018 geklickt. Innerhalb dieses Zeitraums wurden etwa 30 Millionen $ erzielt
+                </aside>
+            </section>
+            <section>
+                <h2>Rechenleistung</h2>
+                <pre>Crypto-Mining</pre>
+                <pre>3D-Rendering</pre>
+                <pre>Weiterverbreitung der Bot-Software</pre>
+            </section>
+            <section>
+                <h2>Ransomware</h2>
+                <pre>PC wird als Geisel genommen</pre>
+                <pre>Geld zahlen zum "freilassen"</pre>
+                <pre>Im Hintergrund typische Botnet-Aktivitäten</pre>
+                <aside class="notes">
+                    <h2>WannaCry</h2>
+                    <h2>Viborot</h2>
+                    <ul>
+                        <li>Hat entschieden, ob PC geiselwert hat</li>
+                        <li>wenn ja, pc gehijackt.</li>
+                        <li>bot software weitergeleitet</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
         <section>
             <section>
                 <h1>PEN Test</h1>
             </section>
             <section>
                 <div>
-                    <pre style="width: fit-content;font-size: 40px">Vulnerability Asessment</pre>
+                    <pre>Vulnerability Asessment</pre>
                     <p style="font-size: 45px">!=</p>
-                    <pre style="width: fit-content;font-size: 40px">Penetration Test</pre>
+                    <pre>Penetration Test</pre>
                 </div>
                 <aside class="notes">
                     Vulnerability Assesment = Maschniller Scan aller bekannten Schwachstellen
@@ -295,11 +382,11 @@
             </section>
             <section>
                 <div>
-                    <pre style="width: fit-content;font-size: 40px">Vorbereitung</pre>
-                    <pre style="width: fit-content;font-size: 40px">Informationsbeschaffung</pre>
-                    <pre style="width: fit-content;font-size: 40px">Bewertung</pre>
-                    <pre style="width: fit-content;font-size: 40px">Angreifen</pre>
-                    <pre style="width: fit-content;font-size: 40px">Bericht</pre>
+                    <pre>Vorbereitung</pre>
+                    <pre>Informationsbeschaffung</pre>
+                    <pre>Bewertung</pre>
+                    <pre>Angreifen</pre>
+                    <pre>Bericht</pre>
                 </div>
                 <aside class="notes">
                     Vorbereitung = Grenzen mit Kunden Besprechen und Absichern

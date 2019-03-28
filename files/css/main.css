@@ -16,21 +16,13 @@ button:hover {
 }
 
 input[type="password"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     height: 70px;
     padding: 6px 10px;
-    background-color: #fff;
     border: 1px solid #d1d1d1;
     border-radius: 4px;
-    box-shadow: none;
     box-sizing: border-box;
-    margin-bottom: 1.5rem;
-    line-height: normal;
-    color: black;
     font: inherit;
-    margin:0;
+    text-align: center;
 }
 
 input[type="password"]:focus {
@@ -48,10 +40,14 @@ hr {
     border-bottom: 3px dashed;
     width: 70%;
     margin-left: 15%;
-    align: center;
     color: #d9d9d9;
     text-align: left;
     margin-bottom: 50px;
+}
+
+.reveal img {
+    border-style: none !important;
+    box-shadow: none !important;
 }
 
 .reveal .progress {
@@ -82,7 +78,7 @@ hr {
     left: 20px;
     right: 20px;
     bottom: 0;
-    z-index: 2;
+    z-index: 20;
 }
 
 .reveal pre{
@@ -90,4 +86,11 @@ hr {
     padding: 10px;
     border-radius: 3px;
     text-align: center;
+    width: fit-content;
+    font-size: 40px;
+}
+
+.proxy {
+    font-size: 100px;
+    margin-right: 100px;
 }
