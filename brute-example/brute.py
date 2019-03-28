@@ -1,11 +1,19 @@
-import requests
+import requests, time
 
-pw = -1
+pw = ""
+passwords = []
+with open('passwords.txt') as my_file:
+	for line in my_file:
+		passwords.append(line)
 
-for i in range(1000, 10000):
-    r = requests.post("http://localhost/login.php?password=" + str(i))
-    if r.text.lower() == "success":
-        pw = i
-        break
+for password in passwords:
+	r = requests.post("http://localhost/login.php?password=" + str(password).rstrip()) 
+	print(str(password.rstrip()))
+	if r.text.lower() == "success":
+		pw = password
+		break
 
-print(str(pw))
+if (pw != ""):
+	print(f"\nDas Password ist: {str(pw).rstrip()}")
+else:
+	print("Das Passwort war nicht in der Liste")
