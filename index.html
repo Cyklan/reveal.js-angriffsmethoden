@@ -42,28 +42,28 @@
     <div style="position: absolute; left: -17px;display: none;" id="overlay">
         <img src="files/img/bookmark.png" style="left: 1%">
         <ul style="list-style-type: none; font-size: 24px; position: absolute; padding: 5px;left: 40px;top: 20px; font-weight: bold; color: rgba(255,255,255,0.9)">
-            <li>Social Engineering</li>
-            <li>MITM</li>
-            <li>Physische Attacken</li>
-            <li>Brute Force</li>
-            <li>Botnetze</li>
-            <li>PEN-Test</li>
+            <li id="i1">Social Engineering</li>
+            <li id="i2">MITM</li>
+            <li id="i3">Physische Attacken</li>
+            <li id="i4">Brute Force</li>
+            <li id="i5">Botnetz</li>
+            <li id="i6">PEN-Test</li>
         </ul>
     </div>
     <div class="slides">
-        <section data-background-video="">
-            <section data-state="start">
+        <section>
+            <section data-state="none">
                 <h1>Angriffsmethoden</h1> <br>
                 von <a href="#">Jonathan</a> & <a href="#">Nils</a>
             </section>
-            <section>
+            <section data-state="none">
                 <h1>Inhalt</h1>
                 <ul>
                     <li>Social engineering</li>
                     <li>MITM</li>
                     <li>Physische Attacken</li>
                     <li>Brute Force</li>
-                    <li>Botnetze</li>
+                    <li>Botnetz</li>
                     <li>PEN Test</li>
                 </ul>
             </section>
@@ -75,12 +75,14 @@
 
             </section>
 
-            <section>
+            <section data-state="none">
                 <pre>Informationsbeschaffung</pre>
+                <i class="fas fa-angle-down"></i>
                 <pre>Verbindung herstellen</pre>
+                <i class="fas fa-angle-down"></i>
                 <pre>Ausnutzen</pre>
             </section>
-            <section>
+            <section data-state="none">
                 <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
                     <img src="files/img/dumpster.jpg" >
@@ -102,14 +104,16 @@
                     <img src="files/img/phishing.jpg" >
                 </div>
                 <aside class="notes">
-                    Dumpster Diving = Müll durchsuchen - durchschnittlicher wert ca. 31.000€ in den usa
-                    ScareWare = einschüchterung
-                    Phreaking = Telefone anrufe
-                    USB-Drop = von keylogger bis zu schadsoftware
-                    Phishing = ausspähen der Daten durch Browser oder emails
+                    <ul>
+                        <li>Dumpster Diving = Müll durchsuchen - durchschnittlicher wert ca. 31.000€ in den usa</li>
+                        <li>ScareWare = einschüchterung</li>
+                        <li>Phreaking = Telefone anrufe</li>
+                        <li>USB-Drop = von keylogger bis zu schadsoftware</li>
+                        <li>Phishing = ausspähen der Daten durch Browser oder emails</li>
+                    </ul>
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <div>
                     <h3>Typosquatting</h3>
 
@@ -134,7 +138,7 @@
                     </script>
                 </div>
             </section>
-            <section>
+            <section data-state="none">
                 <table>
                     <thead>
                     <tr>
@@ -160,7 +164,7 @@
                     </tbody>
                 </table>
             </section>
-            <section>
+            <section data-state="none">
                 <div>
                     <h3>Bitcoin Price vs. Number of Registrations</h3>
                     <canvas id="line-chart" width="800" height="300"></canvas>
@@ -181,7 +185,8 @@
                                         data: [1400, 1000, 1200, 1250, 1400, 2500, 2650, 3000, 5230, 4900, 7000, 8500, 9000, 3000, 1000],
                                         label: "Anzahl der Registrierungen",
                                         borderColor: "#f44141",
-                                        fill: false
+                                        fill: false,
+                                        hidden: true
                                     },
                                 ]
                             },
@@ -206,26 +211,36 @@
             </section>
         </section>
         <section>
-            <section>
+            <section data-state="mitm">
                 <h1>Man-in-the-middle</h1>
             </section>
-            <section>
-                <div>
+            <section data-state="none">
+                <div style="width: 50%; float: left; text-align: center">
                     <pre>Client</pre>
+                    <i class="fas fa-arrows-alt-v"></i>
+                    <pre>Server</pre>
+                </div>
+                <div style="width: 50%; float: right">
+                    <pre>Client</pre>
+                    <i class="fas fa-arrows-alt-v"></i>
                     <pre>MITM</pre>
+                    <i class="fas fa-arrows-alt-v"></i>
                     <pre>Server</pre>
                 </div>
                 <aside class="notes">
-                    Abhören der Communikation
-                    Arp-Spoofing oder schwachstellen im Router ausnutzen
+                    <ul>
+                        <li>Abhören der Communikation</li>
+                        <li>Arp-Spoofing</li>
+                        <li>schwachstellen im Router ausnutzen</li>
+                    </ul>
                 </aside>
             </section>
         </section>
         <section>
-            <section>
+            <section data-state="pa">
                 <h1>Physische Attacken</h1>
             </section>
-            <section>
+            <section data-state="none">
                 <div style="position: fixed; top: 2%; left: 5%; width: 40%; height: 40%;"
                      class="fragment fade-in-then-semi-out">
                     <img src="files/img/keylogger.jpg" >
@@ -243,26 +258,28 @@
                     <img src="files/img/lan-turtle-1200.jpg" >
                 </div>
                 <aside class="notes">
-                    Keylogger = Mitschneiden aller eingaben
-                    GSM Wanze = Glbal System for mobile Communication -> Handy netz -> Aktiv oder passiv
-                    Proxmark = RFID Scannen und Kopieren
-                    Lan Turtle = Internen Netzzugang schaffen
+                    <ul>
+                        <li>Keylogger = Mitschneiden aller eingaben</li>
+                        <li>GSM Wanze = Glbal System for mobile Communication -> Handy netz -> Aktiv oder passiv</li>
+                        <li>Proxmark = RFID Scannen und Kopieren</li>
+                        <li>Lan Turtle = Internen Netzzugang schaffen</li>
+                    </ul>
                 </aside>
             </section>
         </section>
         <section>
-            <section>
+            <section data-state="bf">
                 <h1>Brute Force</h1>
             </section>
-            <section data-state="force">
-                <pre>Brute Force (<i class="fas fa-arrow-right"></i> rohe Gewalt)</pre>
+            <section data-state="none">
+                <pre>Brute Force <i class="fas fa-arrow-right"></i> rohe Gewalt</pre>
                 <pre>Millionen Passwörter werden durchprobiert</pre>
                 <pre><a href="https://haveibeenpwned.com/">HaveIBeenPwned.com</a></pre> 
                 <aside class="notes">
                     Im Internet gibt es diverse Listen mit Millionen von Passwörtern<br>
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <input type="password" name="password" id="password-calc"> <br> <br>
                 <button onclick="calcPW()">Berechnen</button>
                 <br> <br>
@@ -272,7 +289,7 @@
                     (Nach einfachen Worten im Wörterbuch fragen)
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <pre>D0g.....................</pre>
                 oder <br>
                 <pre>PrXyc.N(n4k77#L!eVdAfp9</pre>
@@ -281,59 +298,61 @@
                     Warum? ist länger und hat gleich viele Möglichkeiten
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <h2>Live-Beispiel</h2>
                 <aside class="notes">
                     Passwort von Mensch in Klasse festlegen lassen
                 </aside>
             </section>
         </section>
-        <section data-background-iframe="https://threatmap.bitdefender.com/">
+        <section data-background-iframe="https://threatmap.bitdefender.com/"  data-state="none">
         </section>
         <section>
-            <section>
+            <section data-state="bot">
                 <h1>Botnetz</h1>
             </section>
-            <section>
-                <pre>Netzwerk aus PCs infiziert mit Botprogramm</pre>
-                <pre>Infizierte PCs sind Bots <i class="fas fa-robot"></i> / Zombies</pre>
+            <section data-state="none">
+                <pre>Netzwerk aus PCs</pre>
+                <pre>Infizierte PCs <i class="fas fa-arrow-right"></i> Bots / Zombies</pre>
                 <pre>Viele verschiedene Angriffsmethoden</pre>
             </section>
-            <section>
+            <section data-state="none">
                 <h1>Botnetz-Proxy</h1><br>
-                <span class="fragment"><i class="fas fa-podcast proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-robot proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-server proxy" style="margin-right: 0px !important"></i></span><br><br><br>
-                <span class="fragment"><i class="fas fa-server proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-robot proxy"></i></span><span class="fragment"><i class="fas fa-arrow-right proxy"></i></span><span class="fragment"><i class="fas fa-podcast proxy" style="margin-right: 0px !important"></i></span>
+                <div class="fragment fade-in-then-semi-out"><span><i class="fas fa-podcast proxy"></i></span><span ><i class="fas fa-arrow-right proxy"></i></span><span ><i class="fas fa-robot proxy"></i></span><span ><i class="fas fa-arrow-right proxy"></i></span><span ><i class="fas fa-server proxy" style="margin-right: 0px !important"></i></span><br><br><br></div>
+                <div class="fragment"><span ><i class="fas fa-server proxy"></i></span><span ><i class="fas fa-arrow-right proxy"></i></span><span ><i class="fas fa-robot proxy"></i></span><span ><i class="fas fa-arrow-right proxy"></i></span><span ><i class="fas fa-podcast proxy" style="margin-right: 0px !important"></i></span></div>
                 <aside class="notes">
                     Master schickt Anfrage an Bot. Bot fragt Webserver an.<br>
                     Webserver antwortet Bot. Bot leitet Antwort an Master zurück.
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <h2>DDoS</h2>
                 <pre>Angriff wird auf viele Bots aufgeteilt</pre>
                 <pre>Service wird mit Anfragen bombardiert
 <i class="fas fa-arrow-right"></i> Service ist nicht mehr erreichbar</pre>
             </section>
-            <section>
-                <pre><h2>DNS Flood</h2>DNS Server wird mit Anfragen "überflutet"</pre><br>
-                <pre><h2>HTTP Flood</h2>Webserver wird mit Anfragen "überflutet"</pre>
+            <section data-state="none">
+                <h2>DNS Flood</h2>
+                <pre>DNS Server wird mit Anfragen "überflutet"</pre><br>
+                <h2>HTTP Flood</h2>
+                <pre>Webserver wird mit Anfragen "überflutet"</pre>
             </section>
-            <section>
+            <section data-state="none">
                 <h2>LOIC</h2><pre>Entwickelt von <a href="https://github.com/NewEraCracker/LOIC">"NewEraCracker"</a></pre>
                 <pre>HTTP Flood</pre>
             </section>
             <section>
                 <img src="./files/img/LOIC.png" alt="" style="width:91%">
             </section>
-            <section>
+            <section data-state="none">
                 <h2>HOIC</h2><pre>Entwickelt von Anonymous</pre>
                 <pre>LOIC 2.0</pre>
                 <pre>Benötigt mindestens 50 Nutzer</pre>
             </section>
-            <section>
+            <section data-state="none">
                 <img src="./files/img/HOIC.png" alt="">
             </section>
-            <section>
+            <section data-state="none">
                 <h2>Klickbetrug</h2>
                 <pre>Online Bannerwerbung basiert auf Klicks</pre>
                 <pre>Bots klicken im Hintergrund auf Werbung,<br> um Geld zu verdienen</pre>
@@ -342,13 +361,13 @@
                     Botnet 3VE hat von 2014 - 2018 geklickt. Innerhalb dieses Zeitraums wurden etwa 30 Millionen $ erzielt
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <h2>Rechenleistung</h2>
                 <pre>Crypto-Mining</pre>
                 <pre>3D-Rendering</pre>
                 <pre>Weiterverbreitung der Bot-Software</pre>
             </section>
-            <section>
+            <section data-state="none">
                 <h2>Ransomware</h2>
                 <pre>PC wird als Geisel genommen</pre>
                 <pre>Geld zahlen zum "freilassen"</pre>
@@ -365,13 +384,13 @@
             </section>
         </section>
         <section>
-            <section>
+            <section data-state="pen">
                 <h1>PEN Test</h1>
             </section>
-            <section>
+            <section data-state="none">
                 <div>
                     <pre>Vulnerability Asessment</pre>
-                    <p style="font-size: 45px">!=</p>
+                    <i class="fas fa-not-equal"></i>
                     <pre>Penetration Test</pre>
                 </div>
                 <aside class="notes">
@@ -380,13 +399,17 @@
                     Penetrationstest = größstenteils Manuelle eindringungsversuche
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
                 <div>
-                    <pre>Vorbereitung</pre>
-                    <pre>Informationsbeschaffung</pre>
-                    <pre>Bewertung</pre>
-                    <pre>Angreifen</pre>
-                    <pre>Bericht</pre>
+                    <pre style="margin-bottom: 0">Vorbereitung</pre>
+                    <i class="fas fa-angle-down"></i>
+                    <pre style="margin-bottom: 0; margin-top: 0">Informationsbeschaffung</pre>
+                    <i class="fas fa-angle-down"></i>
+                    <pre style="margin-bottom: 0; margin-top: 0">Bewertung</pre>
+                    <i class="fas fa-angle-down"></i>
+                    <pre style="margin-bottom: 0; margin-top: 0">Angreifen</pre>
+                    <i class="fas fa-angle-down"></i>
+                    <pre style=" margin-top: 0">Bericht</pre>
                 </div>
                 <aside class="notes">
                     Vorbereitung = Grenzen mit Kunden Besprechen und Absichern
@@ -396,7 +419,8 @@
                     Bericht = Rückmeldung der Gefunden schwachstellen an den Kunden
                 </aside>
             </section>
-            <section>
+            <section data-state="none">
+                <h2>Tests</h2>
                 <div style="background-color: black; position: absolute; height: 250px; width: 250px; left: 15%;">
                     <p/>
                 </div>
@@ -415,7 +439,7 @@
         </section>
 
 
-        <section data-state="source">
+        <section data-state="none">
             <h1>Quellen</h1>
             <ul style="font-size: xx-large">
                 <li>https://www.security-insider.de/was-ist-ein-penetrationstest-a-667683/</li>
@@ -465,6 +489,60 @@
     });
     Reveal.addEventListener( 'social', function() {
         document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(255,255,255,1)";
+        document.getElementById("i2").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i3").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i4").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i5").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i6").style.color = "rgba(0,0,0,0.6)";
+    } );
+    Reveal.addEventListener( 'mitm', function() {
+        document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i2").style.color = "rgba(255,255,255,1)";
+        document.getElementById("i3").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i4").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i5").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i6").style.color = "rgba(0,0,0,0.6)";
+    } );
+    Reveal.addEventListener( 'pa', function() {
+        document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i2").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i3").style.color = "rgba(255,255,255,1)";
+        document.getElementById("i4").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i5").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i6").style.color = "rgba(0,0,0,0.6)";
+    } );
+    Reveal.addEventListener( 'bf', function() {
+        document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i2").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i3").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i4").style.color = "rgba(255,255,255,1)";
+        document.getElementById("i5").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i6").style.color = "rgba(0,0,0,0.6)";
+    } );
+    Reveal.addEventListener( 'bot', function() {
+        document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i2").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i3").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i4").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i5").style.color = "rgba(255,255,255,1)";
+        document.getElementById("i6").style.color = "rgba(0,0,0,0.6)";
+    } );
+    Reveal.addEventListener( 'pen', function() {
+        document.getElementById("overlay").style.display = "contents";
+        document.getElementById("i1").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i2").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i3").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i4").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i5").style.color = "rgba(0,0,0,0.6)";
+        document.getElementById("i6").style.color = "rgba(255,255,255,1)";
+    } );
+    Reveal.addEventListener( 'none', function() {
+        document.getElementById("overlay").style.display = "none";
     } );
 </script>
 </body>
